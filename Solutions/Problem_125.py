@@ -18,64 +18,30 @@ in non-decreasing order. Use two pointers to traverse the sorted list
 and find the sum pair.
 '''
 
-
-class TreeNode:
-    def __init__(self, key):
-        self.left = None
-        self.right = None
-        self.data = key
+# Import BST defined in Trees.py
+from Trees import BST
 
 
-class BST:
-    def __init__(self):
-        self.root = None
-
-    def insertNode(self, node):
-        def insertNodeUtil(root, node):
-            if root is None:
-                return node
-            else:
-                if root.data < node.data:
-                    root.right = insertNodeUtil(root.right, node)
-                else:
-                    root.left = insertNodeUtil(root.left, node)
-            return root
-
-        self.root = insertNodeUtil(self.root, node)
-
-    def inOrderTraversal(self):
-        inorder = []
-
-        def inOrderTraversalUtil(node):
-            if node:
-                inOrderTraversalUtil(node.left)
-                inorder.append(node)
-                inOrderTraversalUtil(node.right)
-        inOrderTraversalUtil(self.root)
-        return inorder
-
-    def findPairSum(self, target):
-        inorder = tree.inOrderTraversal()
-        i, j = 0, len(inorder)-1
-        while i < j:
-            left, right = inorder[i].data, inorder[j].data
-            if left+right == target:
-                print(left, right)
-                return
-            if left+right > target:
-                j -= 1
-            else:
-                i += 1
-        print("No such pair found")
+def findPairSum(target):
+    inorder = tree.inOrderTraversal()
+    i, j = 0, len(inorder)-1
+    while i < j:
+        left, right = inorder[i].data, inorder[j].data
+        if left+right == target:
+            print(left, right)
+            return
+        if left+right > target:
+            j -= 1
+        else:
+            i += 1
+    print("No such pair found")
 
 
-inp = [12, 3, 11, 41, 41]
+inp = [12, 3, 31, -1, 11, -1, 41, -1, -1, -1, -1]
 target = 15
 
 # Creating a new BST
 tree = BST()
-for data in inp:
-    node = TreeNode(data)
-    tree.insertNode(node)
+tree.constructBST(inp)
 
-tree.findPairSum(target)
+findPairSum(target)
