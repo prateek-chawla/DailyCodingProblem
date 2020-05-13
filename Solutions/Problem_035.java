@@ -14,7 +14,7 @@ For example, given the array
 ['G', 'B', 'R', 'R', 'B', 'R', 'G'], it should become 
 ['R', 'R', 'R', 'G', 'G', 'B', 'B'].
 
-*/
+*/ 
 
 /*
 SOLUTION:
@@ -51,18 +51,21 @@ public class Problem_035{
     }
     public static void main(String[] args) {
         char[] arr = {'G', 'B', 'R', 'R', 'B', 'R', 'G','G', 'B', 'R', 'R', 'B', 'R', 'G'};
-        int r=0, g=0, b=0;
+        int r=0;
+        // int g=0, b=0;
 
         for(int i=0;i<arr.length;i++){
             if(arr[i]=='R'){
                 r++;
             }
-            else if(arr[i]=='G'){
-                g++;
-            }
-            else if(arr[i]=='B'){
-                b++;
-            }
+            // else if(arr[i]=='G'){
+            //     g++;
+            // }
+            // else if(arr[i]=='B'){
+            //     b++;
+            // }
+            
+            //technically not required if observed the flow of execution
         }
 
         solution(arr,0,'R');

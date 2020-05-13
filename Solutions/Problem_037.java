@@ -11,7 +11,7 @@ For example, given the set {1, 2, 3}, it should return
 You may also use a list or array to represent a set.
 
 */
-/*
+/* 
 SOLUTION:
 Simple solution is to make 2 calls for every index of array and one call is for selecting that element and 
 other is for not selecting that element

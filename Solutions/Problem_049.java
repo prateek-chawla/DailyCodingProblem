@@ -11,7 +11,37 @@ Given the array [-5, -1, -8, -9], the maximum sum would be 0, since we would not
 
 Do this in O(N) time.
 */
+/*
+SOLUTION:
+the idea is to traverse the array and adding elements in currSum and whenever it exceeds maxSum , 
+we update maxSum.
+and whenever currSum reduces to less than 0, it means even if next element addition leads to max value 
+but our currsum is reducing it a little bit so turn it again 0 and start considering the 
+contiguos arrayagain from next element.
+
+TIME COMPLEXITY:O(N)
+SPACE COMPLEXITY:O(1)
+
+*/
 
 public class Problem_049 {
-    
+    public static int findSum(int[] arr) {
+        int maxSum = 0;
+        int currSum=0;
+        for(int i=0;i<arr.length;i++){
+            currSum+=arr[i];
+            if(currSum<0){
+                currSum = 0;
+            }
+            else if (currSum > maxSum){
+                maxSum = currSum;
+            }
+        }
+        return maxSum;
+    }
+    public static void main(String[] args) {
+        int[] arr = {34, -50, 42, 14, -5, 86};
+        System.out.println(findSum(arr));
+        
+    }
 }

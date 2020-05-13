@@ -62,7 +62,7 @@ public class Problem_033{
             // instead of above loop , we can put incomging element directly into left heap if it is smaller than 
             //smallest element off right heap
 
-            if(total%2==0){
+            if(total%2==0){ 
                 int temp = left.peek();
                 int temp2 = right.peek();
                 System.out.println(((temp+temp2)/2.0)+" ");

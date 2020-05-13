@@ -11,7 +11,7 @@
 
 class Solution:
     # @param A : integer
-    # @return a list of list of strings
+    # @return a list of list of strings 
     def crosscheck(self,placed,row,col):
         #checks if particular placed queen conflicts with previously placed queen
         # return true if conflicting else false

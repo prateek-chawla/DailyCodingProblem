@@ -18,7 +18,7 @@ first index, 2 in the second, and 3 in the fourth index
 so we can trap 8 units of water.
 
 */
-
+ 
 /*
 SOLUTION:
 we can easily do this in time-n and space-n ehich is little optimized
